@@ -1,0 +1,54 @@
+driver.get("https://magento.softwaretestingboard.com/");
+	      driver.findElement(By.xpath("//span[text()='Men']")).click();
+	      driver.findElement(By.linkText("Jackets")).click();
+	      driver.findElement(By.xpath("//img[@alt=\"Lando Gym Jacket\"]")).click();
+	      Thread.sleep(4000);
+	      driver.findElement(By.xpath("//div[@option-label=\"L\"]")).click();
+	      Thread.sleep(4000);
+	      driver.findElement(By.xpath("//div[@aria-label=\"Gray\"]")).click(); 
+	      
+	      driver.findElement(By.id("qty")).clear(); 
+	      driver.findElement(By.id("qty")).sendKeys("2"); 
+	      
+	       driver.findElement(By.id("product-addtocart-button")).click(); 
+	       Thread.sleep(4000);
+	       driver.findElement(By.linkText("shopping cart")).click(); 
+	       Thread.sleep(4000);
+	       driver.findElement(By.xpath("//span[text()=\"Proceed to Checkout\"]")).click(); 
+	       Thread.sleep(10000);
+	       
+	       driver.findElement(By.xpath("//*[@id=\"customer-email\"]")).sendKeys("selenium@gmail.com");
+	    		
+	       driver.findElement(By.xpath("//input[@name=\"firstname\"]")).sendKeys("selenium");
+	       driver.findElement(By.name("lastname")).sendKeys("java");
+	       driver.findElement(By.name("street[0]")).sendKeys("dubai main road");
+	       driver.findElement(By.name("city")).sendKeys("dubai");
+	       
+	       
+	       WebElement state = driver.findElement(By.name("region_id"));
+	       Select select = new Select(state);
+	       select.selectByVisibleText("Alaska");
+	       
+	        driver.findElement(By.name("postcode")).sendKeys("12345-6789");
+	        
+	       WebElement country = driver.findElement(By.name("country_id"));
+		       Select sel = new Select(country);
+		       sel.selectByVisibleText("Togo");
+		       
+	        driver.findElement(By.name("telephone")).sendKeys("1234566789");
+	     
+	        Thread.sleep(10000);
+	        driver.findElement(By.xpath("//button[@class=\"button action continue primary\"]")).click();
+
+	        Thread.sleep(4000);
+	        driver.findElement(By.xpath("//button[@class=\"action primary checkout\"]")).click();
+	        Thread.sleep(4000);
+		       String print = driver.findElement(By.className("base")).getText();
+		          System.out.println(print);
+	      
+	      
+	      
+	}
+
+	
+	}
