@@ -36,7 +36,7 @@ driver.get("https://magento.softwaretestingboard.com/");
 		       sel.selectByVisibleText("Togo");
 		       
 	        driver.findElement(By.name("telephone")).sendKeys("1234566789");
-	     
+	     //Thread is add to esay response clearly.
 	        Thread.sleep(10000);
 	        driver.findElement(By.xpath("//button[@class=\"button action continue primary\"]")).click();
 
